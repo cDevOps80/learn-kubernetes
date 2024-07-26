@@ -1,0 +1,40 @@
+kubectl create configmap <map-name> <data-source>
+
+$ kubectl create configmap my-config
+➥   --from-file=foo.json         --> A single file
+➥   --from-file=bar=foobar.conf  --> A file stored under a custom key
+➥   --from-file=config-opts/     --> A whole directory
+➥   clear
+
+➥  kubectl create configmap my-config --from-env-file=path/to/foo.env --from-env-file=path/to/bar.env
+
+ items:
+  - key: "variables.conf"  ## Key to fetch
+    path: "default.conf"   ## Mount the file using this name.
+
+
+ image: busybox:latest
+   envFrom:
+     - configMapRef:
+         name: app-config
+
+
+mountPath: /usr/share/nginx/html/loop.sh
+subPath: loop.sh
+
+
+----------------------------
+Setting Up Immutable ConfigMaps
+
+1) Immutability is useful when you know you’ll only need to configure your application during its initial deployment
+2) When a ConfigMap is mutable, Kubernetes monitors it and periodically applies changes to your pods. This only works when values are mounted as volumes; the environment variables and command line arguments of running containers can’t be changed. Enabling immutability allows Kubernetes components to stop polling for ConfigMap changes, improving cluster performance. IMP
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  db_host: "https://database.example.com"
+immutable: true
+
+
