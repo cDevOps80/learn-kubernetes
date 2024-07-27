@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  persistentVolumeReclaimPolicy: Recycle
+------------------------------------------
+pv
+
+claimRef:
+  namespace: default
+  name: myclaim
+-------------------
+pvc
+
+volumeName: "app080"
