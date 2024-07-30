@@ -9,18 +9,18 @@ terraform {
   }
 }
 
-#data "kubectl_file_documents" "docs" {
-#  content = file("./sample.yaml")
-#}
-
-data "kubectl_filename_list" "manifests" {
-  pattern = "sample.yaml"
+data "kubectl_file_documents" "docs" {
+  content = file("./sample.yaml")
 }
 
+#data "kubectl_filename_list" "manifests" {
+#  pattern = "sample.yaml"
+#}
+
 resource "null_resource" "two1" {
-  depends_on = [data.kubectl_filename_list.manifests]
-  #count = length(data.kubectl_file_documents.docs.documents)
-  count = length(data.kubectl_filename_list.manifests.matches)
+ # depends_on = [data.kubectl_filename_list.manifests]
+  count = length(data.kubectl_file_documents.docs.documents)
+  #count = length(data.kubectl_filename_list.manifests.matches)
   provisioner "local-exec" {
 
     command = "echo This is chaithanya"
