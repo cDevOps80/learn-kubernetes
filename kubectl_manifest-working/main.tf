@@ -1,3 +1,7 @@
+provider "kubectl" {
+
+}
+
 data "kubectl_file_documents" "docs" {
   content = file("sample.yaml")
 }
