@@ -10,10 +10,10 @@ terraform {
 }
 
 data "kubectl_file_documents" "docs" {
-  content = file("sample.yaml")
+  content = file("./sample.yaml")
 }
 
-resource "null_resource" "two" {
+resource "null_resource" "two1" {
   #count = length(data.kubectl_file_documents.docs.documents)
   count = length(data.kubectl_file_documents.docs.documents)
   provisioner "local-exec" {
