@@ -15,7 +15,7 @@ data "kubectl_file_documents" "docs" {
 
 resource "null_resource" "tw1o" {
   #count = length(data.kubectl_file_documents.docs.documents)
-  count = 2
+  count = length(data.kubectl_file_documents.docs.documents)
   provisioner "local-exec" {
 
     command = "echo This is chaithanya"
