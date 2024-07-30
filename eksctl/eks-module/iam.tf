@@ -20,13 +20,13 @@ resource "aws_iam_role" "eks-role" {
 }
 
 resource "aws_iam_role_policy_attachment" "AmazonEKSClusterPolicy" {
-  role       = aws_iam_role.eks-role
+  role       = aws_iam_role.eks-role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
 }
 
 resource "aws_iam_role_policy_attachment" "AmazonEKSVPCResourceController" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
-  role       = aws_iam_role.eks-role
+  role       = aws_iam_role.eks-role.name
 }
 
 
