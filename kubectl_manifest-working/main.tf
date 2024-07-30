@@ -13,7 +13,7 @@ data "kubectl_file_documents" "docs" {
   content = file("sample.yaml")
 }
 
-resource "null_resource" "tw1o" {
+resource "null_resource" "two" {
   #count = length(data.kubectl_file_documents.docs.documents)
   count = length(data.kubectl_file_documents.docs.documents)
   provisioner "local-exec" {
