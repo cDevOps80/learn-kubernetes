@@ -13,7 +13,7 @@ data "kubectl_file_documents" "docs" {
   content = file("./sample.yaml")
 }
 
-resource "null_resource" "two1" {
+resource "null_resource" "two12" {
   depends_on = [data.kubectl_file_documents.docs]
   #count = length(data.kubectl_file_documents.docs.documents)
   count = length(data.kubectl_file_documents.docs.documents)
