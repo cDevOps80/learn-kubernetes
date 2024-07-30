@@ -14,6 +14,7 @@ data "kubectl_file_documents" "docs" {
 }
 
 resource "null_resource" "two1" {
+  depends_on = [data.kubectl_file_documents.docs]
   #count = length(data.kubectl_file_documents.docs.documents)
   count = length(data.kubectl_file_documents.docs.documents)
   provisioner "local-exec" {
