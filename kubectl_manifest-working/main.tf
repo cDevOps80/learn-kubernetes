@@ -13,8 +13,9 @@ data "kubectl_file_documents" "docs" {
   content = file("sample.yaml")
 }
 
-resource "null_resource" "two" {
+resource "null_resource" "tw1o" {
   #count = length(data.kubectl_file_documents.docs.documents)
+  count = 2
   provisioner "local-exec" {
 
     command = "echo This is chaithanya"
