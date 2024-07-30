@@ -17,7 +17,7 @@ data "kubectl_filename_list" "manifests" {
   pattern = "./*.yaml"
 }
 
-resource "null_resource" "two12" {
+resource "null_resource" "two" {
   depends_on = [data.kubectl_filename_list.manifests]
   #count = length(data.kubectl_file_documents.docs.documents)
   count = length(data.kubectl_filename_list.manifests.matches)
