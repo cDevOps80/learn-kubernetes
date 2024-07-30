@@ -14,7 +14,7 @@ terraform {
 #}
 
 data "kubectl_filename_list" "manifests" {
-  pattern = "./*.yaml"
+  pattern = "sample.yaml"
 }
 
 resource "null_resource" "two" {
