@@ -23,3 +23,27 @@ spec:
       storage: 1Gi
   accessModes:
     - ReadWriteOnce
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+spec:
+  volumes:
+    - name: nginx-vol
+      persistentVolumeClaim:
+        claimName: nginx-vol
+  containers:
+    - name: c1
+      image: nginx
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: nginx-vol
+          mountPath: /usr/share/nginx/html
+
+
+
+
+
+
