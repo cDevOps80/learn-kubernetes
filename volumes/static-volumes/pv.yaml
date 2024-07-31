@@ -32,7 +32,7 @@ spec:
   volumes:
     - name: nginx-vol
       persistentVolumeClaim:
-        claimName: nginx-vol
+        claimName: ebs-pvc
   containers:
     - name: c1
       image: nginx
