@@ -23,6 +23,7 @@ spec:
       storage: 1Gi
   accessModes:
     - ReadWriteOnce
+  volumeName: ebs-static
 ---
 apiVersion: v1
 kind: Pod
