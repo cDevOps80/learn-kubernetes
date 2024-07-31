@@ -12,3 +12,14 @@ spec:
     driver: ebs.csi.aws.com
     fsType: ext4
     volumeHandle: vol-00137df0861d6872b
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-pvc
+spec:
+  resources:
+    requests:
+      storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
