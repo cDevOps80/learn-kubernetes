@@ -44,7 +44,7 @@ resource "aws_eks_node_group" "node-group" {
 
 resource "aws_eks_node_group" "node-group1" {
   cluster_name    = aws_eks_cluster.eks.name
-  node_group_name = "roboshop-ng"
+  node_group_name = "roboshop-ng1"
   node_role_arn   = aws_iam_role.node-role.arn
   subnet_ids      = ["subnet-0071e36c53f811c0b","subnet-0354194ae815795f6","subnet-0b4d667be365dede4"]
   capacity_type   = "SPOT"
