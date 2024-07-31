@@ -29,6 +29,7 @@ kind: Pod
 metadata:
   name: pod1
 spec:
+  nodeName: ip-172-31-41-99.ec2.internal
   volumes:
     - name: nginx-vol
       persistentVolumeClaim:
