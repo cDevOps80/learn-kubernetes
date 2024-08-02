@@ -48,11 +48,11 @@ resource "aws_eks_node_group" "node-group1" {
   subnet_ids      = ["subnet-0071e36c53f811c0b","subnet-0354194ae815795f6","subnet-0b4d667be365dede4"]
   capacity_type   = "SPOT"
   disk_size       = "20"
-  instance_types  = ["t3.small"]
+  instance_types  = ["t3.medium"]
 
   scaling_config {
-    desired_size = 2
-    max_size     = 2
+    desired_size = 3
+    max_size     = 4
     min_size     = 1
   }
 
