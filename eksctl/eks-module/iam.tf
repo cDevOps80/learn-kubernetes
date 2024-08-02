@@ -19,18 +19,24 @@ resource "aws_iam_role" "eks-role" {
   }
 }
 
-resource "aws_iam_role_policy_attachment" "AmazonEKSClusterPolicy" {
+resource "aws_iam_role_policy_attachment" "eks-policies" {
+  length    = var.master-policies
   role       = aws_iam_role.eks-role.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+  policy_arn = "arn:aws:iam::aws:policy/${count.index}"
 }
 
-resource "aws_iam_role_policy_attachment" "AmazonEKSVPCResourceController" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
-  role       = aws_iam_role.eks-role.name
-}
+#resource "aws_iam_role_policy_attachment" "AmazonEKSClusterPolicy" {
+#  role       = aws_iam_role.eks-role.name
+#  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+#}
+#
+#resource "aws_iam_role_policy_attachment" "AmazonEKSVPCResourceController" {
+#  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
+#  role       = aws_iam_role.eks-role.name
+#}
 
 
-# node
+
 
 
 resource "aws_iam_role" "node-role" {
@@ -53,20 +59,26 @@ resource "aws_iam_role" "node-role" {
   }
 }
 
-resource "aws_iam_role_policy_attachment" "example-AmazonEKSWorkerNodePolicy" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+resource "aws_iam_role_policy_attachment" "node-policies" {
+  length     = var.node-policies
+  policy_arn = "arn:aws:iam::aws:policy/${count.index}"
   role       = aws_iam_role.node-role.name
 }
 
-resource "aws_iam_role_policy_attachment" "example-AmazonEKS_CNI_Policy" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
-  role       = aws_iam_role.node-role.name
-}
-
-resource "aws_iam_role_policy_attachment" "example-AmazonEC2ContainerRegistryReadOnly" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
-  role       = aws_iam_role.node-role.name
-}
+#resource "aws_iam_role_policy_attachment" "example-AmazonEKSWorkerNodePolicy" {
+#  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+#  role       = aws_iam_role.node-role.name
+#}
+#
+#resource "aws_iam_role_policy_attachment" "example-AmazonEKS_CNI_Policy" {
+#  policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+#  role       = aws_iam_role.node-role.name
+#}
+#
+#resource "aws_iam_role_policy_attachment" "example-AmazonEC2ContainerRegistryReadOnly" {
+#  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+#  role       = aws_iam_role.node-role.name
+#}
 
 resource "aws_iam_role_policy_attachment" "example-AmazonEBSCSIDriverPolicy" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
