@@ -22,7 +22,7 @@ resource "aws_iam_role" "eks-role" {
 resource "aws_iam_role_policy_attachment" "eks-policies" {
   count    = length(var.master-policies)
   role       = aws_iam_role.eks-role.name
-  policy_arn = "arn:aws:iam::aws:policy/${count.index}"
+  policy_arn = "arn:aws:iam::aws:policy/${element(var.master-policies,count.index)}"
 }
 
 #resource "aws_iam_role_policy_attachment" "AmazonEKSClusterPolicy" {
@@ -61,7 +61,7 @@ resource "aws_iam_role" "node-role" {
 
 resource "aws_iam_role_policy_attachment" "node-policies" {
   count     = length(var.node-policies)
-  policy_arn = "arn:aws:iam::aws:policy/${count.index}"
+  policy_arn = "arn:aws:iam::aws:policy/${var.node-policies[count.index]}"
   role       = aws_iam_role.node-role.name
 }
 
