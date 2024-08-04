@@ -10,7 +10,7 @@ spec:
       image: chaitu1812/nginx:{{ .Values.tag_name }}
 ---
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
   name: nginx-service
 spec:
