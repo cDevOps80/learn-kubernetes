@@ -19,4 +19,5 @@ spec:
   type: NodePort
   ports:
     - targetPort: 80
+      port: 80
 
