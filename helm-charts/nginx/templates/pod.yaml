@@ -3,5 +3,6 @@ kind: Pod
 metadata:
   name: pod1
 spec:
-  - containers: c1
-    image: chaitu1812/nginx:{{ .Values.tag_name }}
+  - containers:
+     name: c1
+     image: chaitu1812/nginx:{{ .Values.tag_name }}
