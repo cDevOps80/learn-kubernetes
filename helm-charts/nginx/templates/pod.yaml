@@ -4,4 +4,4 @@ metadata:
   name: pod1
 spec:
   - containers: c1
-    image: chaitu1812/nginx:v1.0.0
+    image: chaitu1812/nginx:{{ .Values.tag_name }}
