@@ -4,6 +4,7 @@ metadata:
   name: debug
   namespace: default
 
+
 ---
 apiVersion: v1
 kind: Pod
@@ -14,5 +15,5 @@ spec:
   serviceAccountName: debug
   containers:
     - name: debug
-      image: rkalluru/debug
+      image: rkalluru/debug:centos91
 
