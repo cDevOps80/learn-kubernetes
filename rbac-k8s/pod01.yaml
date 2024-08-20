@@ -16,5 +16,5 @@ spec:
   nodeName: ip-172-31-34-19.ap-south-1.compute.internal
   containers:
     - name: debug
-      image: rkalluru/debug
+      image: chaitu1812/kubectl-cli
 
