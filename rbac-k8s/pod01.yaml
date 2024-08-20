@@ -13,8 +13,8 @@ metadata:
   namespace: default
 spec:
   serviceAccountName: debug
-  nodeName: ip-172-31-34-19.ap-south-1.compute.internal
   containers:
     - name: debug
       image: chaitu1812/kubectl-cli
+      command: ["sleep","100000"]
 
