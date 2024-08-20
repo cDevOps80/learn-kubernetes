@@ -26,7 +26,7 @@ metadata:
   name: default-ns-pod-reader
 rules:
   - apiGroups: [""]
-    resources: ["pods"]
+    resources: ["pods","services"]
     verbs: ["get", "watch", "list","delete"]
 
 ---
