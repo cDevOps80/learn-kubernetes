@@ -13,7 +13,8 @@ metadata:
   namespace: default
 spec:
   serviceAccountName: debug
+  nodeName: ip-172-31-34-19.ap-south-1.compute.internal
   containers:
     - name: debug
-      image: rkalluru/debug:centos91
+      image: rkalluru/debug
 
