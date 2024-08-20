@@ -18,3 +18,29 @@ spec:
       image: chaitu1812/kubectl-cli
       command: ["sleep","100000"]
 
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default
+  name: default-ns-pod-reader
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "watch", "list"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: default-ns-pod-reader-to-debug-sa
+  namespace: default
+roleRef:
+  kind: Role
+  name: default-ns-pod-reader
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+  - kind: ServiceAccount
+    name: debug
+    namespace: default
+
