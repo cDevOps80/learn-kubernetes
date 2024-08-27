@@ -10,5 +10,5 @@ spec:
     - name: c1
       image: nginx
       env:
-        name: app_url
-        value: {{ .Values.app_url }}
+        - name: app_url
+          value: {{ .Values.app_url }}
