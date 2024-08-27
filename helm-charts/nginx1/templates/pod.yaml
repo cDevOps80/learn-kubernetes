@@ -9,8 +9,8 @@ spec:
     - name: c1
       image: nginx
       env:
-      {{- range $key,$value := .Values.env }}
-              {{ $key }}: {{ $value | quote }}
-      {{- end }}
+        {{- range $key,$value := .Values.env }}
+        {{ $key }}: {{ $value | quote }}
+        {{- end }}
       imagePullPolicy: Always
 
