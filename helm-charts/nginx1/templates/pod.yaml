@@ -9,6 +9,6 @@ spec:
     - name: c1
       image: nginx
       env:
-      {{ toYaml .Values.env }}
+      {{ toYaml .Values.env | nindent 8 }}
 
 
