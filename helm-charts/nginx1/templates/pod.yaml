@@ -10,7 +10,7 @@ spec:
       image: nginx
       env:
         {{- range $key,$value := .Values.env }}
-          {{ $key }}: {{ $value | quote }}
+      {{ $key }}: {{ $value | quote }}
         {{- end }}
       imagePullPolicy: Always
 
