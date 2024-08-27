@@ -9,4 +9,5 @@ spec:
     - name: c1
       image: nginx
       env:
-        name: "chaitru"
+        name: app_url
+        value: {{ .Values.app_url }}
