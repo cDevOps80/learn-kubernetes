@@ -8,6 +8,9 @@ spec:
    containers:
     - name: c1
       image: nginx
-      env: {{- toYaml .Values.env | nindent 8 }}
+      env:
+        {{- range $key,$value := .Values.env }}
+          {{ $key }}: {{ $value | quote }}
+        {{- end }}
       imagePullPolicy: Always
 
