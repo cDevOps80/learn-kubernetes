@@ -12,5 +12,3 @@ spec:
         {{- range $key,$value := .Values.env }}
         {{ $key }}: {{ $value | quote }}
         {{- end }}
-      imagePullPolicy: Always
-
