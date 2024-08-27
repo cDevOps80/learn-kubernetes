@@ -10,6 +10,6 @@ spec:
       image: nginx
       {{- with .Values.env }}
       env:
-      {{- toYaml . | nindent 8 }}
+      {{- toYaml . | nindent 12 }}
       {{- end }}
 
