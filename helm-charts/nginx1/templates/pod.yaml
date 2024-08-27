@@ -8,6 +8,6 @@ spec:
    containers:
     - name: c1
       image: nginx
-      env: {{- toYaml .Values.env | nindent 8 }}
+      env: {{ toYaml .Values.env | quote |nindent 8 }}
 
 
