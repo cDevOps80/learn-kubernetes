@@ -6,6 +6,7 @@ metadata:
     jobgroup: jobexample
 spec:
   completions: 3
+  parallelism: 2
   template:
     metadata:
       name: kubejob
