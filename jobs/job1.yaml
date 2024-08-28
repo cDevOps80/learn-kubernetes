@@ -5,12 +5,12 @@ metadata:
   labels:
     jobgroup: jobexample
 spec:
+  completions: 3
   template:
     metadata:
       name: kubejob
       labels:
         jobgroup: jobexample
-    completions: 3
     spec:
       containers:
         - name: c
