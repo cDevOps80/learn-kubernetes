@@ -10,9 +10,10 @@ spec:
       name: kubejob
       labels:
         jobgroup: jobexample
+    completions: 3
     spec:
       containers:
         - name: c
           image: docker.io/alpine
-          command: ["sleep","20"]
+          command: ["sleep","10"]
       restartPolicy: OnFailure
