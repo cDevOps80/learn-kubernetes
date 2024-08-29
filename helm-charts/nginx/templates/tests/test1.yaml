@@ -9,3 +9,4 @@ spec:
     - name: c1
       image: alpine
       command: ["sleep","30"]
+      restartPolicy: Never
