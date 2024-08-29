@@ -5,6 +5,7 @@ metadata:
   annotations:
     "helm.sh/resource-policy": keep
     "chaitu": {{ .Template.Name }}
+    "chaitu1": {{ .Template.BasePath }}
 spec:
   containers:
     - name: c1
