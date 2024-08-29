@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Release.Name }}-{{ .Chart.Version }}
+spec:
+  containers:
+    - name: c1
+      image: alpine
+      command: ["sleep","10000"]
