@@ -4,6 +4,7 @@ metadata:
   name: {{ .Release.Name }}-{{ .Chart.Version }}
   annotations:
     "helm.sh/resource-policy": keep
+    "chaitu": {{ .Template.Name }}
 spec:
   containers:
     - name: c1
