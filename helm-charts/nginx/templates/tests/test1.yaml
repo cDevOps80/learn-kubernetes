@@ -9,3 +9,5 @@ spec:
     - name: c1
       image: alpine
       command: ["sh","-c","sleep 10 && exit 0"]
+  restartPolicy: Never
+
