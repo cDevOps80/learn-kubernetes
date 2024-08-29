@@ -4,6 +4,7 @@ metadata:
   name: test-pod
   annotations:
     "helm.sh/hook": test
+    "helm.sh/hook-delete-policy": hook-failed
 spec:
   containers:
     - name: c1
