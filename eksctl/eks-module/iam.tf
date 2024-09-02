@@ -80,8 +80,8 @@ resource "aws_iam_role_policy_attachment" "node-policies" {
 #  role       = aws_iam_role.node-role.name
 #}
 
-resource "aws_iam_role_policy_attachment" "example-AmazonEBSCSIDriverPolicy" {
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
-  role       = aws_iam_role.node-role.name
-}
+#resource "aws_iam_role_policy_attachment" "example-AmazonEBSCSIDriverPolicy" {
+#  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+#  role       = aws_iam_role.node-role.name
+#}
 

@@ -1,1 +1,5 @@
-This is sample nginx chart and let me check.
+{{- $table := 6 }}
+{{- $last     := 1 }}
+{{- range $i,$e := until $last }}
+{{ print $i }}
+{{- end }}

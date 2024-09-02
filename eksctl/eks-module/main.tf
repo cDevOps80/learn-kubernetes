@@ -60,10 +60,10 @@ resource "aws_eks_node_group" "node-group1" {
     Name = "roboshop-ng1"
   }
   depends_on = [
-    aws_iam_role_policy_attachment.node-policies,
+    aws_iam_role_policy_attachment.node-policies
 #    aws_iam_role_policy_attachment.example-AmazonEKS_CNI_Policy,
 #    aws_iam_role_policy_attachment.example-AmazonEC2ContainerRegistryReadOnly,
-    aws_iam_role_policy_attachment.example-AmazonEBSCSIDriverPolicy,
+   #  aws_iam_role_policy_attachment.example-AmazonEBSCSIDriverPolicy,
   ]
 
 }
