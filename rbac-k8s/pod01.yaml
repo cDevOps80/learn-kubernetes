@@ -2,28 +2,13 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: debug
-  namespace: default
-
-
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: debug
-  namespace: default
-spec:
-  serviceAccountName: debug
-  containers:
-    - name: debug
-      image: chaitu1812/kubectl-cli
-      command: ["sleep","100000"]
-
+  namespace: prod
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  namespace: default
-  name: default-ns-pod-reader
+  namespace: prod
+  name: prod-reader
 rules:
   - apiGroups: [""]
     resources: ["pods","services"]
@@ -34,13 +19,28 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: default-ns-pod-reader-to-debug-sa
-  namespace: default
+  namespace: prod
 roleRef:
   kind: Role
-  name: default-ns-pod-reader
+  name: prod-reader
   apiGroup: rbac.authorization.k8s.io
 subjects:
   - kind: ServiceAccount
     name: debug
-    namespace: default
+    namespace: prod
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug
+  namespace: prod
+spec:
+  serviceAccountName: debug
+  containers:
+    - name: debug
+      image: chaitu1812/kubectl-cli
+      command: ["sleep","100000"]
+
+
 
