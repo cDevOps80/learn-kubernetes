@@ -15,10 +15,9 @@ rules:
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
   name: default-ns-pod-reader-to-debug-sa
-  namespace: prod
 roleRef:
   kind: ClusterRole
   name: prod-reader
