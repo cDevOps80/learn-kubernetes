@@ -28,6 +28,9 @@ subjects:
   - kind: ServiceAccount
     name: debug
     namespace: prod
+  - kind: ServiceAccount
+    name: default
+    namespace: default
 
 ---
 apiVersion: v1
