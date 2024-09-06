@@ -26,6 +26,9 @@ subjects:
   - kind: ServiceAccount
     name: debug
     namespace: qa
+  - kind: ServiceAccount
+    name: debug
+    namespace: default
 
 ---
 apiVersion: v1
