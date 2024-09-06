@@ -11,7 +11,7 @@ metadata:
   name: prod-reader
 rules:
   - apiGroups: [""]
-    resources: ["pods","services"]
+    resources: ["pods","services","deployments"]
     verbs: ["get", "watch", "list","delete"]
 
 ---
