@@ -27,7 +27,7 @@ subjects:
     name: debug
     namespace: qa
   - kind: ServiceAccount
-    name: debug
+    name: default
     namespace: default
 
 ---
