@@ -10,7 +10,7 @@ metadata:
   namespace: prod
   name: prod-reader
 rules:
-  - apiGroups: ["apps/v1"]
+  - apiGroups: ["/apps/v1"]
     resources: ["deployments"]
     verbs:  ["get", "watch", "list","delete"]
 
