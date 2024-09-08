@@ -15,3 +15,11 @@ resource "helm_release" "nginx_ingress" {
   repository = "https://kubernetes.github.io/ingress-nginx"
   chart      = "ingress-nginx"
 }
+
+resource "helm_release" "nginx_ingress" {
+  depends_on = [null_resource.get_config]
+  name       = "external-dns"
+  repository = "https://kubernetes-sigs.github.io/external-dns/"
+  chart      = "external-dns"
+  wait       = true
+}
