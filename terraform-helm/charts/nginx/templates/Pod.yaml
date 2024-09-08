@@ -11,5 +11,7 @@ spec:
           value: "chaitu"
         - name: Host23
           value: "chaitu23"
+        - name: NAME
+          value: "chaitu23"
       ports:
         - containerPort: {{ .Values.containerPort }}
