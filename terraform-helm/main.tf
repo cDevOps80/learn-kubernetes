@@ -8,6 +8,7 @@ resource "helm_release" "example" {
   name       = "chaitu-nginx"
   chart      = "./charts/nginx"
   upgrade_install = true
+  namespace = "prod"
 
   set {
     name  = "Image.name"
