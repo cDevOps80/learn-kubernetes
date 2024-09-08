@@ -15,21 +15,3 @@ spec:
           value: "chaitu23"
       ports:
         - containerPort: {{ .Values.containerPort }}
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: chaitu
-spec:
-  containers:
-    - name: c1
-      image: {{ .Values.Image.name }}
-      env:
-        - name: Host
-          value: "chaitu"
-        - name: Host23
-          value: "chaitu23"
-        - name: NAME
-          value: "chaitu23"
-      ports:
-        - containerPort: {{ .Values.containerPort }}
