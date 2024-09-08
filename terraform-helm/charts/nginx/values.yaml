@@ -1,0 +1,4 @@
+Image:
+  name: nginx
+
+containerPort: 80
