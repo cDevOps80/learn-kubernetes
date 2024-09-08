@@ -4,3 +4,14 @@ provider "helm" {
   }
 }
 
+resource "helm_release" "example" {
+  name       = "chaitu-nginx"
+  chart      = "./charts/nginx"
+  upgrade_install = true
+
+  set {
+    name  = "Image.name"
+    value = "nginx:1.24.0"
+  }
+
+}
