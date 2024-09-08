@@ -85,3 +85,9 @@ resource "aws_iam_role_policy_attachment" "node-policies" {
 #  role       = aws_iam_role.node-role.name
 #}
 
+/*
+---------------------
+ External DNS
+--------------------- */
+
+
