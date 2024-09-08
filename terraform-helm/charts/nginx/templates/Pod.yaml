@@ -9,13 +9,13 @@ spec:
       ports:
         - containerPort: {{ .Values.containerPort }}
 ---
-apiVersion: v1
-kind: Pod
-metadata:
-  name: sample
-spec:
-  containers:
-    - name: c1
-      image: {{ .Values.Image.name }}
-      ports:
-        - containerPort: {{ .Values.containerPort }}
+#apiVersion: v1
+#kind: Pod
+#metadata:
+#  name: sample
+#spec:
+#  containers:
+#    - name: c1
+#      image: {{ .Values.Image.name }}
+#      ports:
+#        - containerPort: {{ .Values.containerPort }}
