@@ -5,6 +5,7 @@ metadata:
   name: hello
 spec:
   schedule: "* * * * *"
+  concurrencyPolicy: Replace
   jobTemplate:
     spec:
       template:
