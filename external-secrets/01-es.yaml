@@ -9,16 +9,8 @@ spec:
     kind: ClusterSecretStore
   target:
     name: example1
-  data:
-    - secretKey: chaitu
-      remoteRef:
+  dataFrom:
+    - extract:
         key: cart
-        property: cart
-    - secretKey: chaitu1
-      remoteRef:
-        key: cart
-        property: cart1
-    - secretKey: chaitu2
-      remoteRef:
-        key: cart
-        property: cart2
+    - extract:
+        key: user
