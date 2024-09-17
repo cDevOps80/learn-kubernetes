@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-secret
+  namespace: default
+data:
+  vault-token: "aHZzLnhmbENMcThjcnIzNm9uWTdBaHY1eVJGcAo="
+
+---
+apiVersion: external-secrets.io/v1beta1
+kind: ClusterSecretStore
+metadata:
+  name: example-css
+spec:
+  provider:
+    vault:
+      server: "http://18.206.231.87:8200/"
+      path: " roboshop-dev"
+      version: "v2"
+      auth:
+        tokenSecretRef:
+          name: "my-secret"
+          namespace: "default"
+          key: "vault-token"
