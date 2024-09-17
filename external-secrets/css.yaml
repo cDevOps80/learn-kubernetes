@@ -15,7 +15,7 @@ spec:
   provider:
     vault:
       server: "http://18.206.231.87:8200/"
-      path: " roboshop-dev"
+      path: "roboshop-dev"
       version: "v2"
       auth:
         tokenSecretRef:
