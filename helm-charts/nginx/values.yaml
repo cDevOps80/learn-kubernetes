@@ -1,5 +1,7 @@
-env:
-  - name: chaitu
-    value: good
-  - name2: chaitu2
-    value: chaitu2
+envs:
+  - name: key1
+    value: value1
+  - name: key2
+    value: value2
+  - name: key3
+    value: value3
