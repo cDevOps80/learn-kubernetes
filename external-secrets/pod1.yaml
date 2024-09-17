@@ -12,7 +12,7 @@ spec:
       image: alpine
       command: ["sleep","10000"]
       envFrom:
-        - secret:
+        - secretRef:
             name: example1
       volumeMounts:
         - name: sample
