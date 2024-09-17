@@ -4,7 +4,7 @@ metadata:
   name: pod1
 spec:
   volumes:
-    - name: example1
+    - name: sample
       secret:
         secretName:  example1
   containers:
@@ -15,6 +15,6 @@ spec:
         - secretKeyRef:
             name: example1
       volumeMounts:
-        - name: example1
-          mountPath: /chaitu/example1
+        - name: sample
+          mountPath: /chaitu
 
