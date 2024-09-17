@@ -12,5 +12,4 @@ spec:
   data:
     - secretKey: chaitu
       remoteRef:
-        key: cart
-        property: cart
+        key: /dev/cart
