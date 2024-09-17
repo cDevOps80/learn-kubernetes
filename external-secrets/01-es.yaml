@@ -13,4 +13,4 @@ spec:
     - secretKey: chaitu
       remoteRef:
         key: cart
-        property: my-value
+        property: cart
