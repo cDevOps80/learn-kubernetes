@@ -14,3 +14,4 @@ spec:
         key: cart
     - extract:
         key: user
+        decodingStrategy: Auto
