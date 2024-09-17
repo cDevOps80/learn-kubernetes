@@ -14,3 +14,11 @@ spec:
       remoteRef:
         key: cart
         property: cart
+    - secretKey: chaitu1
+      remoteRef:
+        key: cart
+        property: cart1
+    - secretKey: chaitu2
+      remoteRef:
+        key: cart
+        property: cart2
