@@ -4,7 +4,7 @@ metadata:
   name: my-secret
   namespace: default
 data:
-  vault-token: "aHZzLnhmbENMcThjcnIzNm9uWTdBaHY1eVJGcAo="
+  vault-token: aHZzLnhmbENMcThjcnIzNm9uWTdBaHY1eVJGcAo=
 
 ---
 apiVersion: external-secrets.io/v1beta1
