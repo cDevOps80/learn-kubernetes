@@ -1,0 +1,5 @@
+env: dev
+service:
+  type:
+  port: 8080
+  containerPort: 8080

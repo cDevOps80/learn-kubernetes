@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: dev
+  labels:
+    app: {{ .Release.Name }}-{{ .Values.env }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-{{ .Values.env }}
+  {{- if eq .Values.env "dev" }}
+  replicas: 2
+  {{- else if eq .Values.env "prod" }}
+  repliacs: 3
+  {{- else }}
+  repliacs: 2
+  {{- end }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-{{ .Values.env }}
+    spec:
+      containers:
+        - name: {{ .Release.Name }}
+          env: {{- toYaml .Values.envs | nindent 12 }}
+          image: expense-{{ .Release.Name }}
+          ports:
+            - containerPort: {{ .Values.service.containerPort }}
+
+
+
+
+
+
+
+

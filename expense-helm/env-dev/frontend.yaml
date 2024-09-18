@@ -1,0 +1,10 @@
+env: dev
+
+envs:
+  - name: backend_ip
+    value: localhost
+
+service:
+  type: NodePort
+  port: 80
+  containerPort: 80

@@ -6,4 +6,13 @@ spec:
   containers:
     - name: c1
       image: chaitu1812/nginx:v1.0.0
-      env: {{- toYaml .Values.envs }}
+      env:
+      {{- if eq .Values.env "dev"  }}
+       - name: env
+         value: dev
+      {{- else }}
+       - name: env
+         value: prod
+      {{- end }}
+
+
