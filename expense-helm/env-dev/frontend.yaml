@@ -2,7 +2,7 @@ env: dev
 
 envs:
   - name: backend_ip
-    value: localhost
+    value: backend
 
 service:
   type: NodePort
