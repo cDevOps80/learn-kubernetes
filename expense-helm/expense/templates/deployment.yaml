@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app: {{ .Release.Name }}-{{ .Values.env }}
   {{- if eq .Values.env "dev" }}
-  replicas: 2k
+  replicas: 2
   {{- else if eq .Values.env "prod" }}
   repliacs: 3
   {{- else }}
