@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app: {{ .Release.Name }}-{{ .Values.env }}
   {{- if eq .Values.env "dev" }}
-  replicas: 2
+  replicas: 2k
   {{- else if eq .Values.env "prod" }}
   repliacs: 3
   {{- else }}
@@ -24,7 +24,7 @@ spec:
       containers:
         - name: {{ .Release.Name }}
           env: {{- toYaml .Values.envs | nindent 12 }}
-          image: expense-{{ .Release.Name }}
+          image: chaitu1812/expense-{{ .Release.Name }}
           ports:
             - containerPort: {{ .Values.service.containerPort }}
 
