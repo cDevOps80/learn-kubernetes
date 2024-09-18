@@ -2,16 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}
-  namespace: dev
+  namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ .Release.Name }}-{{ .Values.env }}
+    app: {{ .Release.Name }}-{{ .Release.Namespace }}
 spec:
   selector:
     matchLabels:
-      app: {{ .Release.Name }}-{{ .Values.env }}
-  {{- if eq .Values.env "dev" }}
+      app: {{ .Release.Name }}-{{ .Release.Namespace }}
+  {{- if eq .Release.Namespace "dev" }}
   replicas: 2
-  {{- else if eq .Values.env "prod" }}
+  {{- else if eq Release.Namespace "prod" }}
   repliacs: 3
   {{- else }}
   repliacs: 1
@@ -19,7 +19,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}-{{ .Values.env }}
+        app: {{ .Release.Name }}-{{ .Release.Namespace }}
     spec:
       containers:
         - name: {{ .Release.Name }}
