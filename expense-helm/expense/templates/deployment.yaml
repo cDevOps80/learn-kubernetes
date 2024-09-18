@@ -11,7 +11,7 @@ spec:
       app: {{ .Release.Name }}-{{ .Release.Namespace }}
   {{- if eq .Release.Namespace "dev" }}
   replicas: 2
-  {{- else if eq Release.Namespace "prod" }}
+  {{- else if eq .Release.Namespace "prod" }}
   repliacs: 3
   {{- else }}
   repliacs: 1
