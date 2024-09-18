@@ -14,7 +14,7 @@ spec:
   {{- else if eq .Values.env "prod" }}
   repliacs: 3
   {{- else }}
-  repliacs: 2
+  repliacs: 1
   {{- end }}
   template:
     metadata:

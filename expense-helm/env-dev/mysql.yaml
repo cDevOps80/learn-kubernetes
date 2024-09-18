@@ -1,0 +1,9 @@
+env: dev
+
+envs:
+  - name: MYSQL_ROOT_PASSWORD
+    value: ExpenseApp@1
+
+service:
+  port: 3306
+  containerPort: 3306

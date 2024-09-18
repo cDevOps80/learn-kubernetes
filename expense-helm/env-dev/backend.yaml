@@ -1,4 +1,9 @@
 env: dev
+
+envs:
+  - name: DB_HOST
+    value: mysql
+
 service:
   type:
   port: 8080
