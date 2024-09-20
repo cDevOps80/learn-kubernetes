@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug-pod
+spec:
+  restartPolicy: Never
+  containers:
+    - name: c1
+      image: chaitu1812/netpol-rhel9
+      env:
+        - name: ServiceName
+          value: nginx-service
+        - name: ServicePort
+          value: "8080"
+        - name: time
+          value: "5"
+      command:
+        - sh
+        - "-c"
+        - curl --max-time ${time} ${ServiceName}:${ServicePort}  &> /dev/null ; if [[ $? != 0 ]]; then echo "Application is not working!!" && exit 1 ; else echo "Application is working!!" && exit 0 ; fi
