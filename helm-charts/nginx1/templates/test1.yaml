@@ -12,7 +12,7 @@ spec:
       image: chaitu1812/netpol-rhel9
       env:
         {{- range .Values.envs }}
-        {{- toToml . | nindent 10 }}
+        {{- toYaml . | nindent 10 }}
         {{- end }}
       command:
         - sh
