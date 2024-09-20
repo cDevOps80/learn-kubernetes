@@ -1,0 +1,7 @@
+envs:
+  - name: ServiceName
+    value: nginx-service
+  - name: ServicePort
+    value: "80"
+  - name: time
+    value: "5"
