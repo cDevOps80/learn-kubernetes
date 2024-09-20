@@ -10,7 +10,7 @@ spec:
   containers:
     - name: c1
       image: chaitu1812/netpol-rhel9
-      env: {{- toYaml .Values.env | nindent 8 }}
+      env: {{- toYaml .Values.envs | nindent 8 }}
       command:
         - sh
         - "-c"
