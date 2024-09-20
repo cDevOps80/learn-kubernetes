@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: debug-pod
   annotations:
-    "helm.sh/test": test
+    "helm.sh/hook": test
 spec:
   restartPolicy: Never
   containers:
