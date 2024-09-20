@@ -10,11 +10,7 @@ spec:
   containers:
     - name: c1
       image: chaitu1812/netpol-rhel9
-      env:
-        {{- range .Values.envs }}
-         - name: {{ .name }}
-           value: {{ .value }}
-        {{- end }}
+      env: {{- toYaml .Values.env | nindent 8 }}
       command:
         - sh
         - "-c"
