@@ -7,6 +7,8 @@ subjects:
   - kind: ServiceAccount
     name: dev-sa
     namespace: default
+  - kind: ServiceAccount
+    name: dev-sa
 roleRef:
   kind: Role
   name: dev-reader
