@@ -6,7 +6,6 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: dev-sa
-    apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
   name: dev-reader
