@@ -6,8 +6,6 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: dev-sa
-  - kind: ServiceAccount
-    name: dev-sa
     namespace: default
 roleRef:
   kind: Role
