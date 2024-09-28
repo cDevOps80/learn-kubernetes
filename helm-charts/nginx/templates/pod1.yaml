@@ -23,9 +23,9 @@ metadata:
     "helm.sh/resource-policy": keep
 spec:
   selector:
-    app: nginx1
+    app: nginx
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 80
 
 
