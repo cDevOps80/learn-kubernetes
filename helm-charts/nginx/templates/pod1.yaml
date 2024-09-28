@@ -3,12 +3,12 @@ kind: Pod
 metadata:
   name: pod1
   annotations:
-    "helm.sh/resource-policy": keep
+    app: nginx
+    # "helm.sh/resource-policy": keep
 spec:
   containers:
     - name: c1
       image: nginx
       ports:
         - containerPort: 80
-
 
