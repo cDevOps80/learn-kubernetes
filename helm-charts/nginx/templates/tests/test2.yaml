@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: test-pod2
+  name: b
   annotations:
     "helm.sh/hook": test
 spec:
@@ -15,7 +15,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: test-pod1
+  name: c
   annotations:
     "helm.sh/hook": test
 spec:
