@@ -12,7 +12,7 @@ spec:
             - /bin/bash
             - -c
             - cat /usr/share/nginx/html/index1.html
-        initialDelaySeconds: 25
+        initialDelaySeconds: 30
         periodSeconds: 10
         failureThreshold: 1
 
