@@ -8,10 +8,10 @@ spec:
       image: nginx
       startupProbe:
        httpGet:
-        path: /index1.html
-        port: 80
-      initialDelaySeconds: 10
-      failureThreshold: 5
-      periodSeconds: 5
+         path: /index1.html
+         port: 80
+       initialDelaySeconds: 10
+       failureThreshold: 5
+       periodSeconds: 5
 
 
