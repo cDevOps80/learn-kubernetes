@@ -12,5 +12,5 @@ spec:
             - /bin/bash
             - -c
             - cat /usr/share/nginx/html/index.html
-        initialDelaySeconds: 45
+        initialDelaySeconds: 20
         periodSeconds: 10
