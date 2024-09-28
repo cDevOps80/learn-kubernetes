@@ -7,9 +7,11 @@ spec:
     - name: c1
       image: nginx
       livenessProbe:
-        httpGet:
-          path: /index1.html
-          port: 80
+        exec:
+          command:
+            - /bin/bash
+            - -c
+            - cat /usr/share/nginx/html/index1.html
         initialDelaySeconds: 25
         periodSeconds: 10
         failureThreshold: 1
