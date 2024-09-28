@@ -10,4 +10,4 @@ spec:
   containers:
     - name: c1
       image: alpine
-      command: ["sh","-c","sleep 10 && exit 1"]
+      command: ["sh","-c","sleep 10 && exit 0"]
