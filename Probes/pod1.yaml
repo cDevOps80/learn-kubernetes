@@ -8,7 +8,7 @@ spec:
       image: nginx
       livenessProbe:
         httpGet:
-          path: /index.html
+          path: /index1.html
           port: 80
         initialDelaySeconds: 20
         periodSeconds: 10
