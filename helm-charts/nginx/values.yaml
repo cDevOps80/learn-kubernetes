@@ -1,0 +1,24 @@
+podname: ""
+labels:
+  app: nginx
+  Project: good
+
+
+annotations:
+  app: nginx
+  Project: good
+
+env1:
+    app: nginx
+    Project: good
+
+env:
+  - name: c1
+    value: "chaitu"
+    ram: "kkk"
+  - name: c2
+    value: "chaitu"
+    ram: "kkk"
+  - name: c3
+    value: "chaitu"
+    ram: "kkk"
