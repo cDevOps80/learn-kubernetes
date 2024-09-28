@@ -6,13 +6,12 @@ spec:
   containers:
     - name: c1
       image: nginx
-      readinessProbe:
-        exec:
-          command:
-            - /bin/bash
-            - -c
-            - cat /usr/share/nginx/html/index1.html
-        initialDelaySeconds: 15
-        periodSeconds: 10
-        failureThreshold: 1
+      startupProbe:
+       httpGet:
+        path: /index1.html
+        port: 80
+      initialDelaySeconds: 10
+      failureThreshold: 5
+      periodSeconds: 5
+
 
