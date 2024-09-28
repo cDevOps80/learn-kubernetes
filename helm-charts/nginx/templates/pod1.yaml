@@ -12,3 +12,18 @@ spec:
       ports:
         - containerPort: 80
 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod2
+  annotations:
+    app: nginx
+    # "helm.sh/resource-policy": keep
+spec:
+  containers:
+    - name: c1
+      image: nginx
+      ports:
+        - containerPort: 80
+
