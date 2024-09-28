@@ -7,11 +7,8 @@ spec:
     - name: c1
       image: nginx
       livenessProbe:
-        exec:
-          command:
-            - /bin/bash
-            - -c
-            - cat /usr/share/nginx/html/index.html
+        tcpSocket:
+          port: 80
         initialDelaySeconds: 20
         periodSeconds: 10
         failureThreshold: 1
