@@ -1,4 +1,10 @@
-podname: ""
+favorite:
+  app: nginx
+  Project: good
+  drink: coffee
+  food: rice
+
+
 labels:
   app: nginx
   Project: good
