@@ -9,7 +9,7 @@ spec:
   sessionAffinity: ClientIP
   sessionAffinityConfig:
     clientIP:
-      timeoutSeconds: 20
+      timeoutSeconds: 2
   ports:
     - port: 80
       targetPort: 80
