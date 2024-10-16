@@ -9,5 +9,5 @@ spec:
     - ReadWriteOnce
   nfs:
     server: 172.31.89.244
-    path: /tmp/nfs_volume1
+    path: /tmp/nfs_volume
   persistentVolumeReclaimPolicy: Delete
