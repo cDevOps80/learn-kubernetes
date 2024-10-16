@@ -8,3 +8,6 @@ spec:
       storage: 1Gi
   accessModes:
     - ReadWriteOnce
+  claimRef:
+    name: chaitu
+    namespace: default
