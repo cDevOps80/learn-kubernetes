@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: nginx-deploy
+  labels:
+    app: nginx-web
+  namespace: dev
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      volumes:
+        - name: first
+          persistentVolumeClaim:
+            claimName: pvc1
+      containers:
+        - name: c1
+          ports:
+            - port: 80
+          image: nginx
+
