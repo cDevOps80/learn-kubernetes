@@ -19,9 +19,18 @@ spec:
         - name: first
           persistentVolumeClaim:
             claimName: pvc1
+        - name: second
+          hostPath:
+            path: /tmp/nginx-2
       containers:
         - name: c1
           ports:
             - port: 80
           image: nginx
+          volumeMounts:
+            - name: first
+              mountPath: /usr/share/nginx/html
+            - name: second
+              mountPath: /tmp/nginx-2
+              readOnly: true
 

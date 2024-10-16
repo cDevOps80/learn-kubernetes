@@ -8,4 +8,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /tmp/nginx-vol
+    path: /tmp/nginx-1
