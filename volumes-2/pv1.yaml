@@ -7,4 +7,7 @@ spec:
     storage: 1Gi
   accessModes:
     - ReadWriteOnce
+  nfs:
+    server: 172.31.89.244
+    path: /tmp/nfs_volume
   persistentVolumeReclaimPolicy: Delete
