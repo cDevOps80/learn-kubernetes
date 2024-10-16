@@ -16,7 +16,9 @@ spec:
     spec:
       volumes:
         - name: first
-          emptyDir: {}
+          nfs:
+            server: 172.31.89.244
+            path: /tmp/nfs_volume
       containers:
         - name: c1
           ports:
