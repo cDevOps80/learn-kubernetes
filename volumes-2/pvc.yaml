@@ -8,4 +8,3 @@ spec:
       storage: 1Gi
   accessModes:
     - ReadWriteOnce
-  volumeName: chaitu-pv
