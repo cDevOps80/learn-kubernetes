@@ -10,3 +10,6 @@ spec:
   hostPath:
     path: /tmp/nginx-1
   persistentVolumeReclaimPolicy: Delete
+  claimRef:
+    name: chaitu
+    namespace: default
