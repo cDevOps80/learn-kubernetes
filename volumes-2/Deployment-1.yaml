@@ -16,9 +16,8 @@ spec:
     spec:
       volumes:
         - name: first
-          nfs:
-            server: 172.31.89.244
-            path: /tmp/nfs_volume
+          persistentVolumeClaim:
+            claimName: pvc1
       containers:
         - name: c1
           ports:

@@ -7,6 +7,4 @@ spec:
     storage: 1Gi
   accessModes:
     - ReadWriteOnce
-  hostPath:
-    path: /tmp/nginx-1
   persistentVolumeReclaimPolicy: Delete

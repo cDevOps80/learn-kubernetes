@@ -6,5 +6,8 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  nfs:
+    server: 172.31.89.244
+    path: /tmp/nfs_volume
   accessModes:
     - ReadWriteOnce
