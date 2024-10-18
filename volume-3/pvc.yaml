@@ -8,3 +8,4 @@ spec:
       storage: 1Gi
   accessModes:
     - ReadWriteMany
+  volumeName: pvc-58d2051f-4511-4bfd-9918-54df2c4e0093
