@@ -8,3 +8,4 @@ spec:
   accessModes:
     - ReadWriteMany
   storageClassName: "nfs-storageclass"
+  volumeBindingMode: WaitForFirstConsumer
