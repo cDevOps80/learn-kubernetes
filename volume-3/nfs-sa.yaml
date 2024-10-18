@@ -108,4 +108,4 @@ metadata:
 provisioner: nfs-provisioner # name can be anything
 parameters:
   archiveOnDelete: "false"
-volumeBindingMode: WaitForFirstConsumer
+
