@@ -16,7 +16,7 @@ spec:
       containers:
         - name: c1
           image: alpine
-          command: [ "sleep","1000s" ]
+
 
 
 #---
