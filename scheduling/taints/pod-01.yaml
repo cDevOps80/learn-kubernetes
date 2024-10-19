@@ -5,6 +5,7 @@ metadata:
 spec:
   tolerations:
     - operator: Exists
+      key: App
       effect: NoSchedule
   containers:
     - name: alpine
