@@ -6,5 +6,4 @@ metadata:
 spec:
   containers:
     - name: c1
-      image: chaitu1812/netpol-rhel9
-      command: ["sleep","10000"]
+      image: nginx
