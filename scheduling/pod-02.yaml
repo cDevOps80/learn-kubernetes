@@ -13,7 +13,7 @@ spec:
         - labelSelector:
             matchExpressions:
               - key: security
-                operator: Exists
+                operator: In
                 values:
                   - s1
           topologyKey: kubernetes.io/hostname
