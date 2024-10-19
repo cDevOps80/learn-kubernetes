@@ -9,4 +9,4 @@ spec:
       command:
         - "sh"
         - "-c"
-        - "if [ -z $name ]; then echo '$name env is missing' && exit 1; else sleep 10000s;fi"
+        - "if [ -z $name ]; then sleep 1000 && echo '$name env is missing' && exit 1; else sleep 10000s;fi"
