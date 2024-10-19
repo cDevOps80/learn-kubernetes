@@ -7,7 +7,7 @@ spec:
     app: node1
   tolerations:
     - operator: Exists
-      effect: NoExecute
+      effect: NoSchedule
   containers:
     - name: alpine
       image: alpine
