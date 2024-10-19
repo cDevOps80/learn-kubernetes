@@ -5,7 +5,7 @@ metadata:
 spec:
   tolerations:
     - operator: Exists
-      key: App
+      key: node-role.kubernetes.io/control-plane
       effect: NoSchedule
   containers:
     - name: alpine
