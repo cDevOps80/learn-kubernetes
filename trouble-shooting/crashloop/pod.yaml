@@ -5,5 +5,11 @@ metadata:
 spec:
   containers:
     - name: c1
-      image: nginx
+      image: alpine
+      command:
+        - "sh"
+        - "-c"
+        - "echo this is chaithanya > /tmp/chaitu"
+
+
 
