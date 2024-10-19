@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: pod1
 spec:
+  nodeName: ip-172-31-91-104.ec2.internal
   tolerations:
     - operator: Exists
       effect: NoExecute
