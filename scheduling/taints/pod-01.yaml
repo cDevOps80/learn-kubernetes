@@ -5,7 +5,7 @@ metadata:
 spec:
   tolerations:
     - operator: Exists
-      effect: NoExecute
+      effect: NoSchedule
   containers:
     - name: alpine
       image: alpine
