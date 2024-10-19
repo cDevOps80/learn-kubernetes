@@ -11,6 +11,7 @@ spec:
     metadata:
       labels:
         app: nginx
+        security: S1
     spec:
       affinity:
         podAntiAffinity:
