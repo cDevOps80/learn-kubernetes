@@ -1,46 +1,54 @@
-#
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: security
+                    operator: In
+                    values:
+                      - S1
+              topologyKey: kubernetes.io/hostname
+      containers:
+        - name: c1
+          image: alpine
+          command: [ "sleep","1000s" ]
+
+#---
 #apiVersion: v1
 #kind: Pod
 #metadata:
-#  name: pod1
+#  name: with-pod-antiaffinity
 #spec:
-#  affinity:
-#    podAntiAffinity:
-#      requiredDuringSchedulingIgnoredDuringExecution:
-#        - labelSelector:
-#            matchExpressions:
-#              - key: security
-#                operator: In
-#                values:
-#                  - S1
-#          topologyKey: kubernetes.io/hostname
 #  containers:
 #    - name: c1
 #      image: alpine
-#      command: ["sleep","1000s"]
-
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: with-pod-antiaffinity
-spec:
-  containers:
-    - name: c1
-      image: alpine
-      command: [ "sleep","1000s" ]
-  affinity:
-    podAntiAffinity:
-      preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 1
-          podAffinityTerm:
-            labelSelector:
-              matchExpressions:
-                - key: security
-                  operator: In
-                  values:
-                    - S2
-            topologyKey: kubernetes.io/hostname
+#      command: [ "sleep","1000s" ]
+#  affinity:
+#    podAntiAffinity:
+#      preferredDuringSchedulingIgnoredDuringExecution:
+#        - weight: 1
+#          podAffinityTerm:
+#            labelSelector:
+#              matchExpressions:
+#                - key: security
+#                  operator: In
+#                  values:
+#                    - S2
+#            topologyKey: kubernetes.io/hostname
 
 
 
