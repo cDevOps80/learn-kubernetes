@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: deploy1
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: nginx
@@ -13,16 +13,6 @@ spec:
         app: nginx
         security: S1
     spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: security
-                    operator: In
-                    values:
-                      - S1
-              topologyKey: kubernetes.io/hostname
       containers:
         - name: c1
           image: alpine
