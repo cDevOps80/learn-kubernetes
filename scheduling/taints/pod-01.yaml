@@ -5,6 +5,9 @@ metadata:
 spec:
   nodeSelector:
     app: node1
+  tolerations:
+    - operator: Exists
+      effect: NoExecute
   containers:
     - name: alpine
       image: alpine
