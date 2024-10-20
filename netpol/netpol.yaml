@@ -4,9 +4,9 @@ metadata:
   name: test
   namespace: qa
 spec:
-  podSelector: {}
-  ingress:
-    - {}
+  podSelector:
+    matchLabels:
+      app: alpine
   policyTypes:
     - Ingress
     - Egress

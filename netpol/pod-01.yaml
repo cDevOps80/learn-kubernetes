@@ -3,7 +3,9 @@ kind: Pod
 metadata:
   name: pod1
   namespace: qa
+  labels:
+    app: qa
 spec:
   containers:
     - name: c1
-      image: nginx
+      image: chaitu1812/nginx-ports
