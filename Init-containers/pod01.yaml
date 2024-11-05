@@ -10,10 +10,25 @@ spec:
       command:
         - "sh"
         - "-c"
-        - "sleep 10 && exit 1"
+        - "echo 'This is container1' > /data/index.html"
+      volumeMounts:
+        - name: vol
+          mountPath: /data
     - name: c2
       image: alpine
-      command: ["sleep","10"]
+      command:
+        - "sh"
+        - "-c"
+        - "echo 'This is container2' >> /data/index.html"
+      volumeMounts:
+        - name: vol
+          mountPath: /data
   containers:
     - name: c3
       image: nginx
+      volumeMounts:
+        - name: vol
+          mountPath: /usr/share/nginx/html/
+  volumes:
+    - name: vol
+      emptyDir: {}
